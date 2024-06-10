@@ -1,0 +1,31 @@
+name: Build Godot Project
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+  pull_request:
+    branches:
+     - main
+     - develop
+
+env:
+  GODOT_VERSION: '4.2.2'
+  PROJECT_NAME: 'MoveMaFace'
+  GODOT_PATH: 'godot/godot'
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Test
+        run: |
+          echo "triggered"
