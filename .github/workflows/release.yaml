@@ -31,6 +31,10 @@ jobs:
 
       - name: Commit Changes
         run: |
+          if [ ! -f "verions.txt" ]; then
+            # Create the file and insert the JSON object
+            touch versions.txt
+          fi
           echo "${{ inputs.release_version}}" >> verions.txt
           git add versions.txt
           git commit -m "version update to v${{ inputs.release_version }}"
