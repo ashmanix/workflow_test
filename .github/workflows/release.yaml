@@ -31,7 +31,7 @@ jobs:
 
       - name: Commit Changes
         run: |
-          if [ ! -f "verions.txt" ]; then
+          if [ ! -f "versions.txt" ]; then
             # Create the file and insert the JSON object
             touch versions.txt
           fi
