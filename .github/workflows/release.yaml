@@ -12,7 +12,8 @@ on:
         description: 'Set version to release'
         required: true
         type: string
-
+env:
+  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 jobs:
   release:
